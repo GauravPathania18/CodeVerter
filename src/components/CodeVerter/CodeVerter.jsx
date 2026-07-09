@@ -4,6 +4,9 @@ import LanguageDropdown from './LanguageDropdown';
 import { LANGUAGES, DEFAULT_SOURCE_CODE } from './constants';
 
 const CodeVerter = () => {
+  const apiBaseUrl = (import.meta.env.VITE_API_URL || '').replace(/\/$/, '');
+  const convertEndpoint = apiBaseUrl ? `${apiBaseUrl}/api/convert` : '/api/convert';
+
   const [sourceCode, setSourceCode] = useState(DEFAULT_SOURCE_CODE);
   const [targetCode, setTargetCode] = useState('');
   const [sourceLanguage, setSourceLanguage] = useState('Python');
@@ -22,7 +25,7 @@ const CodeVerter = () => {
     setTargetCode('');
 
     try {
-      const response = await fetch('http://localhost:3001/api/convert', {
+      const response = await fetch(convertEndpoint, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -146,7 +149,7 @@ const CodeVerter = () => {
 
           {/* Footer */}
           <div className="mt-8 text-center text-gray-400 text-sm">
-            <p>CodeVerter uses Claude AI to convert code between programming languages.</p>
+            <p>CodeVerter uses Google Gemini AI to convert code between programming languages.</p>
             <p className="mt-1">Results may require manual review and adjustment.</p>
           </div>
         </div>

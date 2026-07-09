@@ -2,16 +2,8 @@
   "name": "codeverter",
   "version": "0.1.0",
   "description": "A modern web application that converts code between 25+ programming languages using Google's Generative AI",
-  "author": "Your Name",
+  "author": "CodeVerter Contributors",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/yourusername/codeverter.git"
-  },
-  "bugs": {
-    "url": "https://github.com/yourusername/codeverter/issues"
-  },
-  "homepage": "https://github.com/yourusername/codeverter#readme",
   "private": true,
   "type": "module",
   "keywords": [
@@ -32,6 +24,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@google/generative-ai": "^0.5.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.4",
+    "express": "^4.18.2",
     "lucide-react": "^0.294.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
@@ -46,11 +42,5 @@
     "postcss": "^8.4.32",
     "tailwindcss": "^3.3.6",
     "vite": "^7.2.4"
-  },
-  "dependencies_server": {
-    "@google/generative-ai": "^0.5.0",
-    "cors": "^2.8.5",
-    "dotenv": "^16.4.4",
-    "express": "^4.18.2"
   }
 }
