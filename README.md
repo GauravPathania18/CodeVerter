@@ -42,7 +42,7 @@ Python, JavaScript, TypeScript, Java, C++, C#, C, Go, Rust, Swift, Kotlin, PHP, 
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/codeverter.git
+git clone <your-repository-url>
 cd codeverter
 ```
 
@@ -65,6 +65,22 @@ Then add your Google Gemini API key:
 ```env
 GEMINI_API_KEY=your_api_key_here
 PORT=3001
+```
+
+Optional hardening variables:
+
+```env
+# Frontend API endpoint override (leave unset to use /api in dev)
+VITE_API_URL=http://localhost:3001
+
+# Comma-separated allowlist for CORS. Leave empty to allow all origins.
+ALLOWED_ORIGINS=http://localhost:5173
+
+# API protection and reliability settings
+MAX_BODY_SIZE=1mb
+REQUEST_TIMEOUT_MS=30000
+RATE_LIMIT_WINDOW_MS=60000
+RATE_LIMIT_MAX_REQUESTS=20
 ```
 
 ## Usage
@@ -152,7 +168,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Support
 
-For support, issues, or feature requests, please open an issue on [GitHub Issues](https://github.com/yourusername/codeverter/issues).
+For support, issues, or feature requests, please open an issue in your repository's issue tracker.
 
 ## Acknowledgments
 
